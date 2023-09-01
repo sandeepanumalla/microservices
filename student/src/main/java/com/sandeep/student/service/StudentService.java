@@ -23,4 +23,8 @@ public class StudentService {
     public List<Student> findAllStudents() {
         return studentRepository.findAll();
     }
+
+    public List<Student> findAllStudentsBySchoolId(Integer schoolId) {
+        return studentRepository.findAllBySchoolId(schoolId);
+    }
 }

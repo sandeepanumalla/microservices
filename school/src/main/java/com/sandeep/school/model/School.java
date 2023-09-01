@@ -12,7 +12,7 @@ import lombok.*;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class School {
+public class  School {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

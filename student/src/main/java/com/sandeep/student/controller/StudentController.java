@@ -4,6 +4,7 @@ import com.sandeep.student.model.Student;
 import com.sandeep.student.service.StudentService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
@@ -23,5 +24,11 @@ public class StudentController {
     @GetMapping
     public List<Student> getAllStudents() {
         return studentService.findAllStudents();
+    }
+
+    @GetMapping("/school/{school-id}")
+    public ResponseEntity<List<Student>> findAllStudents(@PathVariable("school-id") Integer schoolId) {
+        List<Student> studentList = studentService.findAllStudentsBySchoolId(schoolId);
+        return ResponseEntity.ok().body(studentList);
     }
 }
